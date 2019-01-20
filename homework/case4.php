@@ -195,36 +195,3 @@ $class->changeInfo("phone", 555555);
 $class->delInfo("email");
 var_dump($class->getUser("acc_number")); // 222
 var_dump($class->taxCount()); // ((3200/100) * 33) = 1056
-
-//P.S. пока мало практики с ооп, сделал чтобы работало и без вложенных массивов, спасибо
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
