@@ -14,10 +14,10 @@ abstract class TimeAccountingAbstract
   public $work_end;
     
   //log time when work ended
-  public abstract function WorkBegins();
+  public abstract function WorkBegins(string $date);
   
   //log time when work ended
-  public abstract function WorkEnds();
+  public abstract function WorkEnds(string $date);
   
   //how many time employee worked
   public abstract function Worked();
