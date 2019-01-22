@@ -3,14 +3,30 @@
 
 class Configurer
 {
-  private $config = [
-    "ip" => 0.0.0.0,
-    "port" => 8080,
-    "DB" => "Configurer.db",
-    "host" => 192.168.0.1,
-    "server" => "apache",
-    "language" => "php",
-  ];
- 
+  private $config = [];
+  
+  public function __set($key, $value)
+  {
+    $this->config[$key] = $value;
+  }
+  
+  public function __get($key)
+  {
+    return $this->config[$key];
+  }
+  
+  public function __unset($key)
+  {
+    unset($this->config[$key]);
+  }
   
 }
+
+$set = new Configurer();
+
+$set->login = "Sugar";
+$set->host = '127.0.0.1';
+$set->port = 8080;
+
+var_dump($set->port); //8080
+var_dump($set); 

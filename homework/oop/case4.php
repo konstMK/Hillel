@@ -148,7 +148,7 @@ class Accounting
     $this->taxes = $arr['taxes'];
   }
 
-  public function getUser($data)
+  public function getInfo($data)
   {
     return $this->arr[$data];
   }
@@ -193,5 +193,5 @@ $class = new Accounting($info);
 $class->addInfo("phone", 7777777);
 $class->changeInfo("phone", 555555);
 $class->delInfo("email");
-var_dump($class->getUser("acc_number")); // 222
+var_dump($class->getInfo("acc_number")); // 222
 var_dump($class->taxCount()); // ((3200/100) * 33) = 1056
