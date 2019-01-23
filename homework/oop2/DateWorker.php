@@ -8,8 +8,12 @@ class DateWorker extends DateTime
                   "D - M - Y H:i:s",
                  ];
   public $format;
-  
-  public function FormattedTime(int $format)
+
+    /**
+     * @param int $format
+     * @return string
+     */
+    public function FormattedTime(int $format)
   {
     $this->format = self::FORMAT[$format];
     return parent::format($this->format);

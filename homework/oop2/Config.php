@@ -1,7 +1,7 @@
 <?php
 // 3 Написать класс для хранения данных (конфигурации) приложения используя магические методы. 
 
-class Configurer
+class Config
 {
   private $config = [];
   
@@ -22,7 +22,7 @@ class Configurer
   
 }
 
-$set = new Configurer();
+$set = new Config();
 
 $set->login = "Sugar";
 $set->host = '127.0.0.1';
