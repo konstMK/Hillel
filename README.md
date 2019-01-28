@@ -11,3 +11,5 @@ hw (25.01.2019) lays in homework/oop3 <br>
 1 - StringGetter.php <br>
 2 - QuoteThrower.php <br>
 3 - ArrayDelimiter.php <br>
+
+6 - lays in homework/oop3/star
