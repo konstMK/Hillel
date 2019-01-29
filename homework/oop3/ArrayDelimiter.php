@@ -21,17 +21,15 @@ class ArrayDelimiter
   public function delimiteArray()
   {
     $i = 0;
-    foreach($this->storage as $value)
+    foreach ($this->storage as $value)
     {
-      if($this->delim == 'numbers')
-      {    
-        if(is_int($value))
+      if ($this->delim == 'numbers'){    
+        if (is_int($value))
           $this->result[$i] = $value;
           $i++;
       } 
-      if ($this->delim == 'letters')
-      {
-        if(is_string($value))
+      if ($this->delim == 'letters'){
+        if (is_string($value))
           $this->result[$i] = $value;
         $i++;
       }

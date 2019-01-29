@@ -15,15 +15,13 @@ class TimeAccounting extends TimeAccountingAbstract
     $this->log_info['employee_name'] = $name;
     
     //if name is empty
-    if(!$this->log_info['employee_name'])
-    {
+    if (!$this->log_info['employee_name']) {
       throw new UsernameNotSetException('Username is not set', 777);
     }
     $this->log_info['department'] = $department;
     
     //if department isn't set
-    if(!$this->log_info['department'])
-    {
+    if (!$this->log_info['department']) {
       throw new UsernameNotSetException('Department is not set', 775);
     }
     $this->storage_file = fopen($filename, "a+");

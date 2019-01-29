@@ -44,9 +44,3 @@ echo StringStatic::getString() . "\n";
 
 $dynamic  = new StringDynamic('Dynamic power');
 echo $dynamic->getString();
-
-
-
-
-
-

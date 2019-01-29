@@ -24,5 +24,4 @@ abstract class TimeAccountingAbstract
   
   //write all the data down to file
   protected abstract function logDataIntoFile(array $log_info);
-    
 }
