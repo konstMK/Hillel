@@ -29,20 +29,20 @@ class TimeAccounting extends TimeAccountingAbstract
     $this->storage_file = fopen($filename, "a+");
   }
 
-  public function WorkBegins($date)
+  public function workBegins($date)
   {
     $this->work_start = date($date);
     $this->log_info['work_start'] = $this->work_start;
   }
   
-  public function WorkEnds($date)
+  public function workEnds($date)
   {
     $this->work_end = date($date);
     $this->log_info['work_end'] = $this->work_end;
   }
 
   //how many time employee worked
-  public function Worked()
+  public function worked()
   {
     $dt_start = new DateTime($this->work_start);
     $dt_end = new DateTime($this->work_end);
@@ -51,7 +51,7 @@ class TimeAccounting extends TimeAccountingAbstract
   }
 
   //prepare all the data to write down into file
-  protected function LogDataIntoFile(array $log_info)
+  protected function logDataIntoFile(array $log_info)
   {
     //[employee_department] $employee_name start: $work_start || end: $work_end || worked: $work_interval
     $log_string = sprintf("[%s] %s start: %s || end: %s || worked: %s \r\n", $log_info['department'], 
@@ -64,7 +64,7 @@ class TimeAccounting extends TimeAccountingAbstract
   }
   
   //write all data into storage_file
-  public function WriteData()
+  public function writeData()
   {
     $this->LogDataIntoFile($this->log_info);
   }
