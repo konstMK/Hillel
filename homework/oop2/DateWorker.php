@@ -13,7 +13,7 @@ class DateWorker extends DateTime
      * @param int $format
      * @return string
      */
-    public function FormattedTime(int $format)
+    public function formattedTime(int $format)
   {
     $this->format = self::FORMAT[$format];
     return parent::format($this->format);
@@ -21,4 +21,4 @@ class DateWorker extends DateTime
 }
 
 $date = new DateWorker();
-var_dump($date->FormattedTime(0));
+var_dump($date->formattedTime(0));

@@ -28,14 +28,12 @@ class ArrayDelimiter
         if(is_int($value))
           $this->result[$i] = $value;
           $i++;
-         
       } 
       if ($this->delim == 'letters')
       {
         if(is_string($value))
           $this->result[$i] = $value;
         $i++;
-         
       }
     }
     return $this->result;

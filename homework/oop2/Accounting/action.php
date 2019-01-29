@@ -12,17 +12,17 @@ try
     if($_POST['work_start'])
     {
       $dt = $_POST['work_start'];
-      $work->WorkBegins($dt);
+      $work->workBegins($dt);
     }
    
     if($_POST['work_end'])
     {
       $dt = $_POST['work_end'];
-      $work->WorkEnds($dt);
+      $work->workEnds($dt);
     } 
     
-    echo $work->Worked();
-    $work->WriteData();
+    echo $work->worked();
+    $work->writeData();
   } catch (UsernameNotSetException $e) { 
       echo $e->getMessage() . "<br>";
       echo $e->getCode();

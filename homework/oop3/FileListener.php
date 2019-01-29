@@ -21,16 +21,16 @@ class Logger
   {
    $this->infile = fopen($filename, "a+");
   }
-  protected function LogDataIntoFile()
+  protected function logDataIntoFile()
   {
     //[name] - message
     $log_string = sprintf("[%s] - %s \r\n", $this->info['name'], $this->info['message']);
     fwrite($this->infile, $log_string);
   }
   
-  public function WriteData()
+  public function writeData()
   {
-    $this->LogDataIntoFile();
+    $this->logDataIntoFile();
   }
 }
 
@@ -57,10 +57,10 @@ class Messages extends Logger
 $log = new Logger('log.log');
 $log->__set('name', 'Petya');
 $log->__set('message', 'In the deep shivering winter, I can feel the joy of a dancing summer in my heart. @ Debasish Mridha ');
-$log->WriteData();
+$log->writeData();
 $log->__set('name', 'Ivan');
 $log->__set('message', 'Winter is much like unrequited love: cold and merciless. @ Kellie Elmore');
-$log->WriteData();
+$log->writeData();
 
 $msg = new Messages('log.log');
 echo $msg->getData();
