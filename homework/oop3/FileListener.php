@@ -9,49 +9,52 @@
 
 class Logger 
 {
-  protected $info = [];
-  protected $infile;
-  
-  public function __set($key, $value)
-  {
-    $this->info[$key] = $value;
-  }
-  
-  public function __construct($filename)
-  {
-   $this->infile = fopen($filename, "a+");
-  }
-  protected function logDataIntoFile()
-  {
-    //[name] - message
-    $log_string = sprintf("[%s] - %s \r\n", $this->info['name'], $this->info['message']);
-    fwrite($this->infile, $log_string);
-  }
-  
-  public function writeData()
-  {
-    $this->logDataIntoFile();
-  }
+    protected $info = [];
+    protected $infile;
+
+    public function __set($key, $value)
+    {
+        $this->info[$key] = $value;
+    }
+
+    public function __construct($filename)
+    {
+        $this->infile = fopen($filename, "a+");
+    }
+
+    protected function logDataIntoFile()
+    {
+        //[name] - message
+        $log_string = sprintf("[%s] - %s \r\n", $this->info['name'], $this->info['message']);
+        fwrite($this->infile, $log_string);
+    }
+
+    public function writeData()
+    {
+        $this->logDataIntoFile();
+    }
 }
 
 class Messages extends Logger
 {
-  public $contents = [];
-  
-  public function __set($key, $value)
-  {
-    parent::__set();
-  }
-  public function __construct($filename)
-  {
-    parent::__construct($filename);
-    $contents = fread($this->infile, filesize($filename));
-    $this->contents = $contents;
-  }
-  public function getData()
-  {
-    return $this->contents;
-  }
+    public $contents = [];
+
+    public function __set($key, $value)
+    {
+        parent::__set();
+    }
+
+    public function __construct($filename)
+    {
+        parent::__construct($filename);
+        $contents = fread($this->infile, filesize($filename));
+        $this->contents = $contents;
+    }
+
+    public function getData()
+    {
+        return $this->contents;
+    }
 }
 
 $log = new Logger('log.log');

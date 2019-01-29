@@ -10,33 +10,32 @@
 
 class StringStatic
 {
-  public static $user_input;
-    
-  public static function setString($input)
-  {
-    self::$user_input = $input;
-  }
-  
-  public static function getString()
-  {
-    return self::$user_input;
-  }
-  
+    public static $user_input;
+
+    public static function setString($input)
+    {
+        self::$user_input = $input;
+    }
+
+    public static function getString()
+    {
+        return self::$user_input;
+    }
 }
 
 class StringDynamic 
 {
-  public $user_input;
-  
-  public function __construct(string $input)
-  {
-    $this->user_input = $input;
-  }
-  
-  public function getString()
-  {
-    return $this->user_input;
-  }
+    public $user_input;
+
+    public function __construct(string $input)
+    {
+        $this->user_input = $input;
+    }
+
+    public function getString()
+    {
+        return $this->user_input;
+    }
 }
 
 StringStatic::setString('be or not to be');

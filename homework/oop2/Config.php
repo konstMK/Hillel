@@ -3,22 +3,22 @@
 
 class Config
 {
-  private $config = [];
-  
-  public function __set($key, $value)
-  {
-    $this->config[$key] = $value;
-  }
-  
-  public function __get($key)
-  {
-    return $this->config[$key];
-  }
-  
-  public function __unset($key)
-  {
-    unset($this->config[$key]);
-  }
+    private $config = [];
+
+    public function __set($key, $value)
+    {
+        $this->config[$key] = $value;
+    }
+
+    public function __get($key)
+    {
+        return $this->config[$key];
+    }
+
+    public function __unset($key)
+    {
+        unset($this->config[$key]);
+    }
   
 }
 

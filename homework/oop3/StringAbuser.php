@@ -15,60 +15,62 @@
 
 class StringAbuser
 {
-  public $string;
-  public $rand_string;
-  public $str_len;
-  
-  public function __construct($text)
-  {
-    $this->string = $text;  
-  }
-  
-  private function stringToUp()
-  {
-    return strtoupper($this->string);
-  }
-  
-  public function spaceToPlus()
-  {
-    return str_replace(' ', '+', $this->string);
-  }
-  
-  public function oToZero()
-  {
-    return str_replace('O', '0', $this->string);
-  }
-  
-  public function iToOne()
-  {
-    return str_replace('I', '1', $this->string);
-  }  
-  
-  public function sToDollar()
-  {
-    return str_replace('S', '$', $this->string);
-  }
-  
-  public function strStr($needle)
-  {
-    return strstr($this->string, $needle);
-  }
-  
-  public function randomString()
-  {
-    $this->str_len = strlen($this->string);
-    for($i = 0; $i < $this->str_len; $i++)
+    public $string;
+    public $rand_string;
+    public $str_len;
+
+    public function __construct($text)
     {
-      $this->randstring .= strtoupper($this->string[rand(0, $this->str_len)]);
+        $this->string = $text;  
     }
-    return $this->randstring;
-  }
-  
-  //when access object as string, it uppercase the input text
-  public function __ToString()
-  {
-    return $this->stringToUp();
-  }
+
+    private function stringToUp()
+    {
+        return strtoupper($this->string);
+    }
+
+    public function spaceToPlus()
+    {
+        return str_replace(' ', '+', $this->string);
+    }
+
+    public function oToZero()
+    {
+        return str_replace('O', '0', $this->string);
+    }
+
+    public function iToOne()
+    {
+        return str_replace('I', '1', $this->string);
+    }  
+
+    public function sToDollar()
+    {
+        return str_replace('S', '$', $this->string);
+    }
+
+    public function strStr($needle)
+    {
+        return strstr($this->string, $needle);
+    }
+
+    public function randomString()
+    {
+        $this->str_len = strlen($this->string);
+        
+        for($i = 0; $i < $this->str_len; $i++)
+        {
+            $this->randstring .= strtoupper($this->string[rand(0, $this->str_len)]);
+        }
+        
+        return $this->randstring;
+    }
+
+    //when access object as string, it uppercase the input text
+    public function __ToString()
+    {
+        return $this->stringToUp();
+    }
 }
 $test = 'this Is maddness bOb77';
 

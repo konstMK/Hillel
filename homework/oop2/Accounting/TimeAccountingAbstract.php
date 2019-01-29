@@ -8,20 +8,20 @@
 * */
 abstract class TimeAccountingAbstract
 {
-  public $employee_name;
-  public $employee_department;
-  public $work_start;
-  public $work_end;
-    
-  //log time when work ended
-  public abstract function workBegins(string $date);
-  
-  //log time when work ended
-  public abstract function workEnds(string $date);
-  
-  //how many time employee worked
-  public abstract function worked();
-  
-  //write all the data down to file
-  protected abstract function logDataIntoFile(array $log_info);
+    public $employee_name;
+    public $employee_department;
+    public $work_start;
+    public $work_end;
+
+    //log time when work ended
+    public abstract function workBegins(string $date);
+
+    //log time when work ended
+    public abstract function workEnds(string $date);
+
+    //how many time employee worked
+    public abstract function worked();
+
+    //write all the data down to file
+    protected abstract function logDataIntoFile(array $log_info);
 }

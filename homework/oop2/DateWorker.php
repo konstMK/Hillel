@@ -3,21 +3,21 @@
 
 class DateWorker extends DateTime 
 {
-  const FORMAT = ["Y -- m -- D",
-                  "D - M - Y",
-                  "D - M - Y H:i:s",
-                 ];
-  public $format;
+    const FORMAT = ["Y -- m -- D",
+              "D - M - Y",
+              "D - M - Y H:i:s",
+             ];
+    public $format;
 
     /**
-     * @param int $format
-     * @return string
-     */
+    * @param int $format
+    * @return string
+    */
     public function formattedTime(int $format)
-  {
-    $this->format = self::FORMAT[$format];
-    return parent::format($this->format);
-  }
+    {
+        $this->format = self::FORMAT[$format];
+        return parent::format($this->format);
+    }
 }
 
 $date = new DateWorker();
