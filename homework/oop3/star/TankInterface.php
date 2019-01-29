@@ -1,6 +1,6 @@
 <?php
 
-interface TankMoveInterface
+interface TankMovementInterface
 {
   public function accelerationPedal();
   public function brakePedal();
@@ -30,7 +30,7 @@ interface TankShootInterface
   public function shootSecondGun();
   public function reloadMainGun();
   public function reloadSecondGun();
-  public function aimMainGunUp();
+  public function aimMainGunUp($target);
   public function aimMainGunDown();
   public function aimSecondGunUp();
   public function aimSecondGunDown();

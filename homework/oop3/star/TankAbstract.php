@@ -1,19 +1,20 @@
 <?php
 
-abstract class CarAbstract 
+abstract class TankAbstract
 {
   public $color;
   public $brand;
   public $model;
   public $body_type;
-  public $weigth;
+  public $weight;
   public $length;
   public $height;
   public $speed;
   public $fuel;
-  public $stearing_wheel_side;
   public $engine;
   public $hp_power;
 
   abstract public function handBrake();
+  abstract public function startSmokeScreen();
+  abstract public function startMissileDefence();
 }
