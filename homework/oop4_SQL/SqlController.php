@@ -60,21 +60,13 @@ class SqlController
                       VALUES (':first_name', ':last_name', ':email', ':company', ':is_active', ':age')";
     }
 
-    protected function updateClient( int $id, $array)
+    protected function updateClient( int $id, $key, $value )
     {
         if ( $id >= 0 ) {
-
             $this->id = $id;
-
-            foreach ($array as $key => $value) {
-
-                // update client when inputed id match with id in db
-                if ($this->key == 'id' && $this->value == $this->id) {
-                    $this->sql = "UPDATE `hillel_hm`.`clients` SET $this->key = $this->value WHERE id = $this->id";
-                    $this->key = $key;
-                    $this->value = $value;
-                }
-            }
+            $this->key = $key;
+            $this->value = $value;
+            $this->sql = "UPDATE `hillel_hm`.`clients` SET $this->key = $this->value WHERE id = $this->id";
         }
     }
 
@@ -83,7 +75,7 @@ class SqlController
         $this->sql = "DELETE FROM `hillel_hm`.`clients` WHERE $key = $value";
     }
 
-    public function delete( string $key, $value  )
+    public function delete( string $key, $value )
     {
         $this->deleteClient( $key, $value );
     }
