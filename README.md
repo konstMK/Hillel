@@ -14,3 +14,5 @@ hw (25.01.2019) lays in homework/oop3 <br>
 4 - StringAbuser.php <br>
 5 - FileListener.php <br>
 6 - lays in homework/oop3/star
+
+hw (01.02.2019) lays in homework/oop4_SQL <br>
