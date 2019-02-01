@@ -80,7 +80,7 @@ class SqlController
 
     protected function deleteClient( string $key, $value )
     {
-        $this->sql = "DELETE FROM `hillel_hm`.`clients` WHERE $this->key = $this->value";
+        $this->sql = "DELETE FROM `hillel_hm`.`clients` WHERE $key = $value";
     }
 
     public function delete( string $key, $value  )
