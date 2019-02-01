@@ -66,15 +66,25 @@ class SqlController
      */
     public function addClient( string $first_name, string $last_name, string $email, string $company, int $is_sctive, int $age )
     {
-        $stmt = $this->pdo->prepare( "INSERT INTO `hillel_hm`.`clients` (
-                                                                    `first_name`,
-                                                                    `last_name`, 
-                                                                    `email`,
-                                                                    `company_name`,
-                                                                    `is_active`,
-                                                                    `age`
-                      ) 
-                      VALUES (:first_name, :last_name, :email, :company, :is_active, :age)" );
+        $stmt = $this->pdo->prepare( 
+                                     "INSERT INTO 
+                                     `hillel_hm`.`clients` (
+                                                            `first_name`,
+                                                            `last_name`, 
+                                                            `email`,
+                                                            `company_name`,
+                                                            `is_active`,
+                                                            `age`
+                                                            ) 
+                                     VALUES (
+                                             :first_name, 
+                                             :last_name, 
+                                             :email, 
+                                             :company, 
+                                             :is_active, 
+                                             :age
+                                             )" 
+        );
 
 
         $stmt->execute(
